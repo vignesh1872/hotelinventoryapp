@@ -1,0 +1,38 @@
+this the first text file
+v18.20.8
+10.8.2
+
+Introduction of directive
+--------------------------
+Directive are use to change the behavior and appearance of DOM element
+Directive can implement all life cycle hooks.
+Directive can not have Template
+
+Types of Directive
+-------------------
+Structure Directives
+Attribute Directives
+
+Build in Directive
+------------------
+*ngfor
+*ngif
+*ngswitch
+ngclass
+ngstyle
+
+pipes
+-----
+pipes are used for data transformation,
+pipes don't change actual object
+
+build in pipe line
+------------------
+Date pipe 
+uppercase pipe
+lowercase pipe
+decimal pipe
+percent pipe
+json pipe - it can apply on object and array it used in debugging perpose
+async pipe - 
+slice pipe - it want staring point and ending point
