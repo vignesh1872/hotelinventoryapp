@@ -9,7 +9,7 @@
 
 <div *ngIf="room?.availabelRooms">
     <p>Rooms List</p>
-    <table>
+    <table class="table">
         <tr>
             <th>Index</th>
             <th>Even/Odd</th>
@@ -29,7 +29,7 @@
         <td>{{rooms.amenities}}</td>
         <td>{{ rooms.price | currency:'INR' }}</td>
         <!-- <td>{{rooms.photos}}</td> -->
-        <td>{{rooms.checkintime}}</td>
+        <td>{{rooms.checkintime | date}}</td>
         <td>{{rooms.checkouttime| date}} </td>
     </tr>
     </table>
