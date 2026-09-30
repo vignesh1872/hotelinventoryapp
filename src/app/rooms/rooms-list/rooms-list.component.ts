@@ -15,4 +15,7 @@ export class RoomsListComponent implements OnInit {
     
   }
 
+  selectrooms(rooms:RoomList){
+    this.selectedrooms.emit(rooms);
+  }
 }

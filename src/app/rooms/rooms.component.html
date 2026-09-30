@@ -8,8 +8,13 @@
          class="fs-5 fw-bold"></div>
   </div>
 
+<div *ngIf="selectedrooms">
+    {{selectedrooms | json}}
+</div>
+
   <div *ngIf="room?.availabelRooms" class="mb-4">
-    <hinv-rooms-list [rooms_lis]="roomList"></hinv-rooms-list>
+    <hinv-rooms-list [rooms_lis]="roomList"
+    (selectedrooms)="selectroom($event)"></hinv-rooms-list>
   </div>
 
   <div>

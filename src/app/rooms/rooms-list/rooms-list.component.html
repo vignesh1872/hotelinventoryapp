@@ -10,7 +10,7 @@
         <!-- <th>Photo</th> -->
         <th>checkIntime</th>
         <th>checkOuttime</th>
-        <th></th>
+        <th>SELECTROOM</th>
     </tr>
     <tr [ngClass]="e ? 'even' : 'odd'" *ngFor="let rooms of rooms_lis; let e = even; let o = odd; let i = index">
         <td>{{i}}</td>
@@ -22,6 +22,6 @@
         <!-- <td>{{rooms.photos}}</td> -->
         <td>{{rooms.checkintime | date}}</td>
         <td>{{rooms.checkouttime| date}} </td>
-        <td><button >SELECT</button></td>
+        <td><button class="btn btn-primary" (click)="selectrooms(rooms)">SELECT</button></td>
     </tr>
 </table>

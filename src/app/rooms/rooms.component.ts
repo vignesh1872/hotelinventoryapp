@@ -14,6 +14,8 @@ export class RoomsComponent implements OnInit {
 
   toggleflag = false
 
+  selectedrooms!: RoomList;
+
   room : Room = {
     totalRooms: 20,
     availabelRooms: 10,
@@ -55,5 +57,9 @@ export class RoomsComponent implements OnInit {
 
   toggle(){
     this.toggleflag = !this.toggleflag
+  }
+
+  selectroom(data:RoomList){
+    this.selectedrooms = data
   }
 }
