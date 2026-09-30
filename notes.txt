@@ -36,3 +36,40 @@ percent pipe
 json pipe - it can apply on object and array it used in debugging perpose
 async pipe - 
 slice pipe - it want staring point and ending point
+
+
+[Component instance has lifecycle hooks which  can help you to hook into diffrent events on component
+Lifecycle end when the component is destroyed.]
+
+Life cycle of hooks
+--------------------
+Constructor
+   ↓
+ngOnChanges()
+   ↓
+ngOnInit()
+   ↓
+ngDoCheck()
+   ↓
+ngAfterContentInit()
+   ↓
+ngAfterContentChecked()
+   ↓
+ngAfterViewInit()
+   ↓
+ngAfterViewChecked()
+   ↓
+ngOnDestroy()
+
+--------------------
+
+way for component communication
+
+why we need component communication:
+	the scenario where two or more component need to interact is know as component communication
+	there are multiple way to achieve the component communication
+
+way for component interaction
+    using @input and @output
+    using @viewchild and @contentchild
+    using services    

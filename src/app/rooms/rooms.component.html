@@ -1,40 +1,18 @@
-<h1>Welocome to {{hotelName}}</h1>
-<div [hidden] = "toggleflag">
-    <p>No of Rooms:</p>
-    <div [ngStyle]="{'color': room.availabelRooms > 0 ? 'blue' : 'yellow'}" 
-    [innerText]="totalRoom"></div>
-</div>
+<div class="container mt-5">
+  <h1 class="mb-4">Welcome to {{hotelName}}</h1>
 
-<!-- {{room?.availabelRooms ?? 'No Rooms'}} -->
+  <div [hidden]="toggleflag" class="card p-3 mb-3">  <!-- p-3 Adds padding inside the card mb-3 Adds space below the card -->
+    <p class="mb-2"><strong>No of Rooms:</strong></p>
+    <div [ngStyle]="{'color': room.availabelRooms > 0 ? 'blue' : 'yellow'}"
+         [innerText]="totalRoom"
+         class="fs-5 fw-bold"></div>
+  </div>
 
-<div *ngIf="room?.availabelRooms">
-    <p>Rooms List</p>
-    <table class="table">
-        <tr>
-            <th>Index</th>
-            <th>Even/Odd</th>
-            <th>Room Number</th>
-            <th>Room Type</th> 
-            <th>Room Amenities</th>
-            <th>Price</th>
-            <!-- <th>Photo</th> -->
-            <th>checkIntime</th>
-            <th>checkOuttime</th>
-        </tr>
-    <tr [ngClass]="e ? 'even' : 'odd'" *ngFor="let rooms of roomList; let e = even; let o = odd; let i = index">
-        <td>{{i}}</td>
-        <td>{{ e ? "Even" : "Odd"}}</td>
-        <td>{{rooms.RoomNumber}}</td>
-        <td>{{rooms.RoomType}}</td>
-        <td>{{rooms.amenities}}</td>
-        <td>{{ rooms.price | currency:'INR' }}</td>
-        <!-- <td>{{rooms.photos}}</td> -->
-        <td>{{rooms.checkintime | date}}</td>
-        <td>{{rooms.checkouttime| date}} </td>
-    </tr>
-    </table>
-</div>
+  <div *ngIf="room?.availabelRooms" class="mb-4">
+    <hinv-rooms-list [rooms_lis]="roomList"></hinv-rooms-list>
+  </div>
 
-<div>
-    <button (click)="toggle()">Toggle</button>
+  <div>
+    <button class="btn btn-primary" (click)="toggle()">Toggle</button>
+  </div>
 </div>
