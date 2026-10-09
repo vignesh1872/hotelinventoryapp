@@ -24,7 +24,7 @@ export class RoomsComponent implements OnInit {
 
   roomList: RoomList[] = [{
     RoomNumber : 5,
-    RoomType : "Delux rooom",
+    RoomTypes : "Delux rooom",
     amenities: 'air conditioner, Free Wi-Fi, Tv',
     price : 5000,
     photos: "https://imgs.search.brave.com/_KusvhxwgEfmzRUlBDUZem_14rzWFXf0dPhDhKdRDcM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvdGh1bWJu/YWlsL3B1cnBsZS1h/ZXN0aGV0aWMtcm9v/bS05OGR2YjdveWp6/Mm13ZmU3LmpwZw",
@@ -33,7 +33,7 @@ export class RoomsComponent implements OnInit {
   },
 {
     RoomNumber : 6,
-    RoomType : "Private rooom",
+    RoomTypes : "Private rooom",
     amenities: 'air conditioner, Free Wi-Fi, Tv',
     price : 10000,
     photos: "https://imgs.search.brave.com/_KusvhxwgEfmzRUlBDUZem_14rzWFXf0dPhDhKdRDcM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvdGh1bWJu/YWlsL3B1cnBsZS1h/ZXN0aGV0aWMtcm9v/bS05OGR2YjdveWp6/Mm13ZmU3LmpwZw",
@@ -41,8 +41,8 @@ export class RoomsComponent implements OnInit {
     checkouttime:new Date ('29-Sep-2026'),
   },
 {
-    RoomNumber : 5,
-    RoomType : "Delux rooom",
+    RoomNumber : 7,
+    RoomTypes : "Delux rooom",
     amenities: 'air conditioner, Free Wi-Fi, Tv',
     price : 5000,
     photos: "https://imgs.search.brave.com/_KusvhxwgEfmzRUlBDUZem_14rzWFXf0dPhDhKdRDcM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvdGh1bWJu/YWlsL3B1cnBsZS1h/ZXN0aGV0aWMtcm9v/bS05OGR2YjdveWp6/Mm13ZmU3LmpwZw",
@@ -65,8 +65,8 @@ export class RoomsComponent implements OnInit {
 
   addingRoom(){
     const newRoom: RoomList = {
-      RoomNumber : 5,
-      RoomType : "Super Delux rooom",
+      RoomNumber : 8,
+      RoomTypes : "Super Delux rooom",
       amenities: 'air conditioner, Free Wi-Fi, Tv, Massage, Swimming pool',
       price : 10000,
       photos: "https://imgs.search.brave.com/_KusvhxwgEfmzRUlBDUZem_14rzWFXf0dPhDhKdRDcM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvdGh1bWJu/YWlsL3B1cnBsZS1h/ZXN0aGV0aWMtcm9v/bS05OGR2YjdveWp6/Mm13ZmU3LmpwZw",
