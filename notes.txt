@@ -73,3 +73,9 @@ way for component interaction
     using @input and @output
     using @viewchild and @contentchild
     using services    
+
+we have use ChangeDetectionStrategy when grid of data have to update 
+   when should use [when you write input and output]
+
+avoid using docheck 
+   important we can use both in one component ngOnChanges and ngdocheck   

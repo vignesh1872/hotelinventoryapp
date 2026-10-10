@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter,ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter,ChangeDetectionStrategy,OnChanges,SimpleChanges } from '@angular/core';
 import { RoomList } from '../rooms';
 import type {ColDef} from 'ag-grid-community';
 
@@ -8,14 +8,21 @@ import type {ColDef} from 'ag-grid-community';
   styleUrls: ['./rooms-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RoomsListComponent implements OnInit {
+export class RoomsListComponent implements OnInit,OnChanges {
 
   @Input() rooms_lis: RoomList[] = [];
 
+  @Input() title: string = '';
   // @Input() newRoom!: RoomList;
   
   @Output() selectedrooms = new EventEmitter<RoomList>();
-  ngOnInit(): void {
+ 
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes)
+  }
+
+   ngOnInit(): void {
     
   }
 
