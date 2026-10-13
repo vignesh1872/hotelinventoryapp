@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit,ViewChild,AfterViewChecked } from '@angular/core';
 import { Room, RoomList } from './rooms';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'hinv-rooms',
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss']
 })
-export class RoomsComponent implements OnInit {
+export class RoomsComponent implements OnInit,AfterViewInit,AfterViewChecked {
 
   hotelName = "Hilton Hotel";
 
@@ -24,7 +25,17 @@ export class RoomsComponent implements OnInit {
 
   title = "Room List"
 
-  roomList: RoomList[] = [{
+  roomList: RoomList[] = [];
+
+  // @ViewChild(HeaderComponent, { static: true }) headerComponent! :HeaderComponent
+  // in onInit we can access the headerComponent we get undefined but in ngAfterViewInit we can access the child component headerComponent without static true
+  @ViewChild(HeaderComponent) headerComponent! :HeaderComponent
+
+  constructor() { }
+
+  ngOnInit(): void {
+    // console.log(this.headerComponent)
+    this.roomList = [{
     RoomNumber : 5,
     RoomTypes : "Delux rooom",
     amenities: 'air conditioner, Free Wi-Fi, Tv',
@@ -33,7 +44,7 @@ export class RoomsComponent implements OnInit {
     checkintime: new Date ('27-Sep-2026'),
     checkouttime:new Date ('28-Sep-2026'),
   },
-{
+  {
     RoomNumber : 6,
     RoomTypes : "Private rooom",
     amenities: 'air conditioner, Free Wi-Fi, Tv',
@@ -42,7 +53,7 @@ export class RoomsComponent implements OnInit {
     checkintime: new Date ('27-Sep-2026'),
     checkouttime:new Date ('29-Sep-2026'),
   },
-{
+  {
     RoomNumber : 7,
     RoomTypes : "Delux rooom",
     amenities: 'air conditioner, Free Wi-Fi, Tv',
@@ -51,10 +62,13 @@ export class RoomsComponent implements OnInit {
     checkintime: new Date ('27-Sep-2026'),
     checkouttime:new Date ('30-Sep-2026'),
   }]
+  }
 
-  constructor() { }
+  ngAfterViewInit(): void {
+    this.headerComponent.title = "Rooms View" //  here we get some error that was nothing if that error came in development mode then we can ignore that error because in production mode that error will not come 
+  }
 
-  ngOnInit(): void {
+  ngAfterViewChecked(): void {
   }
 
   toggle(){
