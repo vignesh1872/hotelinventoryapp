@@ -1,6 +1,8 @@
 <div class="container mt-3">
   <!-- <h1 class="mb-4">Welcome to {{hotelName}}</h1> -->
   <hinv-header></hinv-header>
+  <hinv-header></hinv-header>
+
   <div [hidden]="toggleflag" class="card p-3 mb-3">  <!-- p-3 Adds padding inside the card mb-3 Adds space below the card -->
     <p class="mb-2"><strong>No of Rooms:</strong></p>
     <div [ngStyle]="{'color': room.availabelRooms > 0 ? 'blue' : 'yellow'}"

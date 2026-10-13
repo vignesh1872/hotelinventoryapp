@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit,ViewChild,AfterViewChecked } from '@angular/core';
+import { Component, OnInit, AfterViewInit,ViewChild,AfterViewChecked,ViewChildren, QueryList } from '@angular/core';
 import { Room, RoomList } from './rooms';
 import { HeaderComponent } from '../header/header.component';
 
@@ -29,7 +29,9 @@ export class RoomsComponent implements OnInit,AfterViewInit,AfterViewChecked {
 
   // @ViewChild(HeaderComponent, { static: true }) headerComponent! :HeaderComponent
   // in onInit we can access the headerComponent we get undefined but in ngAfterViewInit we can access the child component headerComponent without static true
-  @ViewChild(HeaderComponent) headerComponent! :HeaderComponent
+  @ViewChild(HeaderComponent) headerComponent! :HeaderComponent; // if we have multiple child component of same type then we can use @ViewChildren to get all the child components of same type in a query list and we can access the child component using index of the query list
+
+  @ViewChildren(HeaderComponent) headerchildrencomponent!: QueryList<HeaderComponent>; // querylist is something like array but it is not array it is a collection of child components of same type and we can access the child component using index of the query list
 
   constructor() { }
 
@@ -66,6 +68,7 @@ export class RoomsComponent implements OnInit,AfterViewInit,AfterViewChecked {
 
   ngAfterViewInit(): void {
     this.headerComponent.title = "Rooms View" //  here we get some error that was nothing if that error came in development mode then we can ignore that error because in production mode that error will not come 
+    this.headerchildrencomponent.last.title = "Last Child Component"
   }
 
   ngAfterViewChecked(): void {
