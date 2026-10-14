@@ -80,3 +80,13 @@ we have use ChangeDetectionStrategy when grid of data have to update
 
 avoid using docheck 
    important we can use both in one component ngOnChanges and ngdocheck   
+
+ngafterviewchecked is an optiona   
+
+with @viewchild we can access one instance  [viewchild have static, {static = false} by default]
+with @viewchildren we can access multiple instance 
+
+
+-------------------
+@viewchildren(' ') public querinput: QueryList<>;
+@viewchild('' {static = true}) licence:ElementRef;
